@@ -8,7 +8,7 @@ This is the source code for the method as described in our paper:
 The framework of our method. Our method mainly contains two parts, one is the data processing part and the other is the model part. 
 </p>
 
-<div align=center><img width="600" height="200" src="https://github.com/circustata/TransGene/blob/main/figure/model_framework_wholestructure.jpg"/></div>
+<div align=center><img width="600" height="800" src="https://github.com/circustata/TransGene/blob/main/figure/model_framework_attention.jpg"/></div>
 <p align="left"> 
 The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
 </p>
