@@ -18,6 +18,11 @@ As shown in above framework figure. Our approache mainly consists of three parts
 * The files with **\_decoder.py** suffix in the deeplabv3, fpn, linknet, manet, pan, pspnet, unet, unetplusplus folders are the steps to combine AFMA to the existing model (for part (b) in above figure). AFMA approach is adaptable to different types of architectures of various semantic segmentation models and can work on different layers of the encoder’s feature maps. 
 * The **MyLoss_correction.py** in utils is for calculating the gold standard AFMA and training loss (for part(c) in above figure).
 
+<div align=center><img width="1000" height="300" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
+<p align="left"> 
+The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
+</p>
+
 ## Requirements
 * albumentations==1.0.0
 * inplace_abn==1.1.0
