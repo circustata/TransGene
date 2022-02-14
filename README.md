@@ -24,13 +24,11 @@ The framework of our method. (a) Calculate the Across Feature Map Attention. The
 </p>
 
 ## Requirements
-* albumentations==1.0.0
 * inplace_abn==1.1.0
-* matplotlib==3.4.2
 * numpy==1.22.2
-* opencv_python_headless==4.5.2.54
+* pandas==1.2.4
 * pretrainedmodels==0.7.4
-* segmentation_models_pytorch==0.2.0
+* scikit_learn==1.0.2
 * torch==1.8.0
 * torchvision==0.9.0
 
@@ -69,11 +67,6 @@ Install the environment.
 ```bash
 pip install -r requirements.txt
 ```
-
-```bash
-Replace the utils file in SMP (segmentation_models_pytorch) with the utils file of our codes.
-```
-
 Train and test the model.
 ```bash
 python main.py
