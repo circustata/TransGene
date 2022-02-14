@@ -1,26 +1,11 @@
 # An end-to-end architecture of Transformer-based method for identifying cell type specific Alzheimer disease related genes from single-cell RNA-sequencing data  
 
-This is the source code for the method as described in our paper:
+**Alzheimer's disease** (AD) is a severe neuron disease that damages brain cells, resulting in permanent memory loss. It affects over 35 million people worldwide and is currently the sixth leading cause of death in the United States. AD-related brain pathology begins almost 10–20 years before the onset of dementia symptoms. Although no disease-modifying treatments are currently available for AD, early diagnosis could lead to early therapeutic interventions to delay the disease progression over time and could help tailor disease management and plan future care and improve the quality of AD patient’s life. Here, we're the first to propose an interpretable end-to-end Transformer based architecture for dianosing AD and explaining AD-related important genes.  This is the source code for the method as described in our paper:
 **An end-to-end architecture of Transformer-based method for identifying cell type specific Alzheimer disease related genes from single-cell RNA-sequencing data**. 
 
-<div align=center><img width="1000" height="280" src="https://github.com/circustata/TransGene/blob/main/figure/model_framework_wholestructure.jpg"/></div>
+<div align=center><img width="1000" height="300" src="https://github.com/circustata/TransGene/blob/main/figure/model_framework_wholestructure.jpg"/></div>
 <p align="left">
-The framework of our method. Our method mainly contains two parts, one is the data processing part and the other is the model part. 
-</p>
-
-<div align=center><img width="600" height="800" src="https://github.com/circustata/TransGene/blob/main/figure/model_framework_attention.jpg"/></div>
-<p align="left"> 
-The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
-</p>
-
-As shown in above framework figure. Our approache mainly consists of three parts:
-* The lines **23-176** of encoder_channelatt_img.py are used for calculating AFMA between original image and any layer of feature map (for part (a) in above figure). 
-* The files with **\_decoder.py** suffix in the deeplabv3, fpn, linknet, manet, pan, pspnet, unet, unetplusplus folders are the steps to combine AFMA to the existing model (for part (b) in above figure). AFMA approach is adaptable to different types of architectures of various semantic segmentation models and can work on different layers of the encoder’s feature maps. 
-* The **MyLoss_correction.py** in utils is for calculating the gold standard AFMA and training loss (for part(c) in above figure).
-
-<div align=center><img width="1000" height="300" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
-<p align="left"> 
-The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
+The framework of our end-to-end Transformer based method. In the data processing component, the single-cell RNA expression profiles of AD patients and control individuals are obtained and shuffled. In the Transformer component, a linear layer converts the processed data into lower-dimensional representations. After that, the Transformer encoder learns the relationships between each cell. Finally, the model can be trained to identify the source for the cells through the loss function.
 </p>
 
 ## Requirements
@@ -33,13 +18,11 @@ The framework of our method. (a) Calculate the Across Feature Map Attention. The
 * torchvision==0.9.0
 
 ## Data
-* [CamViD](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) The Cambridge-driving Labeled Video Database (CamVid) is the first collection of videos with object class semantic labels, complete with metadata.. 
-* [CityScapes](https://www.cityscapes-dataset.com/dataset-overview/) CityScapes is a new large-scale dataset that contains a diverse set of stereo video sequences recorded in street scenes from 50 different cities. 
-* [Caltech-UCSD Birds](http://www.vision.caltech.edu/visipedia/CUB-200.html) Caltech-UCSD Birds 200 (CUB-200) is an image dataset with photos of 200 bird species (mostly North American). 
-* [LiTS](https://www.kaggle.com/andrewmvd/liver-tumor-segmentation) 130 CT scans for segmentation of the liver as well as tumor lesions.
-* [SkinLesion](https://challenge2018.isic-archive.com/) Skin Lesion Analysis towards Melanoma Detection Challenge Part I.
+The scRNA-seq data of 95,186 single-nucleus transcriptomes from 17 hippocampus (8 controls and 9 AD cases), stratified by 14 cell types, were used to evaluate the performance of our model. In order to make it easier for the readers to reproduce and understand the code, we have provided a small amount of synthesized Arterial cell type related data under the **dataset** folder, where provides 20 synthesized scRNA-seq data for each patient.
 
-In order to make it easier for the readers to reproduce and understand the code, I have provided a small amount of example data used in our experiment under the **dataset** folder, where provides six training, validation and test images for the CamVid.
+## Cell Types
+"Veinous", "T cell", "SMC", "Pericyte", "Capillary", "Arterial", "Oligo", "P. Fibro", "Ependymal", "Microglia", "Astrocyte", "OPC", "M. Fibro", "Neuron"
+
 
 ## File declaration
 **models/attonimage**：contains the codes for calculating AFMA.
@@ -71,3 +54,7 @@ Train and test the model.
 ```bash
 python main.py
 ```
+<div align=center><img width="1000" height="300" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
+<p align="left"> 
+The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
+</p>
