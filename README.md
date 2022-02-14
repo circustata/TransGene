@@ -18,7 +18,7 @@ The framework of our end-to-end Transformer based method. In the data processing
 * torchvision==0.9.0
 
 ## Data
-The scRNA-seq data of 95,186 single-nucleus transcriptomes from 17 hippocampus (8 controls and 9 AD cases), stratified by 14 cell types, were used to evaluate the performance of our model. In order to make it easier for the readers to reproduce and understand the code, we have provided a small amount of synthesized Arterial cell type related data under the **dataset** folder, where provides 20 synthesized scRNA-seq data for each patient.
+The scRNA-seq data of 95,186 single-nucleus transcriptomes from 17 hippocampus (8 controls and 9 AD cases), stratified by 14 cell types, were used to evaluate the performance of our model. In order to make it easier for the readers to reproduce and understand the code, we have provided a small amount of **synthesized** Arterial cell type related data under the **dataset** folder, where provides 20 synthesized scRNA-seq data for each patient.
 
 Cell type | Training cell number | Validation cell number | Test cell number |
 ---- | --- | --- | --- |
@@ -53,6 +53,8 @@ Train and test the model.
 ```bash
 python main.py
 ```
+
+## Results
 <div align=center><img width="1000" height="300" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
 <p align="left"> 
 The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
