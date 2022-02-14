@@ -20,28 +20,27 @@ The framework of our end-to-end Transformer based method. In the data processing
 ## Data
 The scRNA-seq data of 95,186 single-nucleus transcriptomes from 17 hippocampus (8 controls and 9 AD cases), stratified by 14 cell types, were used to evaluate the performance of our model. In order to make it easier for the readers to reproduce and understand the code, we have provided a small amount of synthesized Arterial cell type related data under the **dataset** folder, where provides 20 synthesized scRNA-seq data for each patient.
 
-## Cell Types
-"Veinous", "T cell", "SMC", "Pericyte", "Capillary", "Arterial", "Oligo", "P. Fibro", "Ependymal", "Microglia", "Astrocyte", "OPC", "M. Fibro", "Neuron"
-
+Cell type | Training cell number | Validation cell number | Test cell number |
+---- | --- | --- | --- |
+Oligo | 16,293 | 2,743 | 3,880 |
+Astrocyte | 10,627 | 2,287 | 3,840 |
+Pericyte | 10,383 | 1,610 | 3,791 |
+Capillary | 7,500 | 1,847 | 3,111 |
+Veinous | 3,852 | 1,011 | 1,897 |
+SMC | 2,961 | 899 | 1,570 |
+Arterial | 2,338 | 606 | 1,433 |
+OPC | 2,177 | 308 | 624 |
+Microglia | 1,854 | 244 | 428 |
+P. Fibro | 1,104 | 209 | 641 |
+Ependymal | 1,008 | 183 | 289 |
+Neuron | 778 | 50 | 270 |
+M. Fibro | 124 | 60 | 117 |
+T cell | 114 | 31 | 94 |
 
 ## File declaration
-**models/attonimage**：contains the codes for calculating AFMA.
+**data/scRNASeq.py**：the data preprocessing step.
 
-**models/manet**：the decoder and segmentation part of the manet_afma model.
-
-**models/unet**： the decoder and segmentation part of the unet_afma model.
-
-**models/unetplusplus**：the decoder and segmentation part of the unet\+\+_afma model.
-
-**models/deeplabv3**：the decoder and segmentation part of the deeplabv3_afma model.
-
-**models/fpn**：the decoder and segmentation part of the fpn_afma model.  
-
-**models/pan**：the decoder and segmentation part of the pan_afma model.
-
-**models/linknet**：the decoder and segmentation part of the linknet_afma model.
-
-**models/pspnet**：the decoder and segmentation part of the pspnet_afma model.
+**models/AttentionBasedModel.py**：The Transformer-based method.
 
 **main.py**: The codes for training, validating and testing.
 
