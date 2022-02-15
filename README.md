@@ -1160,7 +1160,7 @@ The detailed results of the cell source identification for 14 cell types.
 </table>
 
 #### Patient level results
-<div align=center><img width="1000" height="260" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
+<div align=center><img width="960" height="260" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
 <p align="left"> 
 The classification results at patient level. It shows the predicted results of each cell type. AD and Control denote AD patients and control individuals, respectively. The number on the right of the slash is the cell amount, and the number on the left indicates the proportion of cells belonging to AD patients predicted by our model. For example, the data 0.79/817 (the top-left data corresponding to AD1-Veinous) indicates that our model predicts that 79% (645 cells) of the 817 Veinous cells belong to AD patients. When more than 50% of cells are predicted to be AD cells, the data box is marked in red, indicating that the patient is predicted as AD patient. The box colored in blue is considered as the control group by our model. We defined the "Single Cell Type Score" metric to evaluate the importance of different cell types for diagnosing AD.
 </p> 
