@@ -1167,6 +1167,4 @@ The classification results at patient level. It shows the predicted results of e
 
 As can be seen from the figure: (1) Our method can accurately diagnose Alzheimer's disease by data from a single cell type. The Figure shows that all 53 groups of experiments were correctly predicted except for one group of data in each Ependymal, T cell, and Capillary cell type; (2) Our method is also applicable to diagnosing Alzheimer's disease using data from all cell types. The figure shows that our method correctly classifies Alzheimer's patients using all cell type data; (3) We defined the "single-cell type score" metric to evaluate the importance of different cell types for diagnosing Alzheimer's disease. The experimental results show that using **SMC**, **P. Fibro**, or **Arterial** alone can diagnose Alzheimer's disease more accurately than using all data.
 
-The experimental results show that our model could be used for predicting AD and also for studying the AD-related genes. We hope our method could help researchers for studing Alzheimer’s disease. 
-
-The method also can be applied to single-cell data for other diseases.
+The experimental results show that our model could be used for predicting AD and also for studying the AD-related genes. We hope our method could help researchers for studing Alzheimer’s disease. The method also can be applied to single-cell data for other diseases.
