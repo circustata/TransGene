@@ -55,18 +55,19 @@ python main.py
 ```
 
 ## Results
-The detailed results of the cell source identification for 14 cell types.
 
+#### Cell type level results
+The detailed results of the cell source identification for 14 cell types. 
 <table>
 <tr>
-<td>Method</td>
-<td>AUC</td>
-<td>ACC<sup>a</sup></td>
-<td>PPV<sup>b</sup></td>
-<td>Sensitivity</td>
-<td>F-score</td>
-<td>Specificity</td>
-<td>NPV<sup>c</sup></td>
+<td><b>Method</b></td>
+<td><b>AUC</b></td>
+<td><b>ACC</b><sup>a</sup></td>
+<td><b>PPV</b><sup>b</sup></td>
+<td><b>Sensitivity</b></td>
+<td><b>F-score</b></td>
+<td><b>Specificity</b></td>
+<td><b>NPV</b><sup>c</sup></td>
 </tr>
 <tr>
 <td colspan="8" align=center><b>Veinous</b></td>
@@ -951,14 +952,217 @@ The detailed results of the cell source identification for 14 cell types.
 <td>0.898</td>
 </tr>
 <tr>
-<td></td>
+<td colspan="8"><sup>a</sup>ACC stands for accuracy. <sup>b</sup>PPV stands for positive predictive value. <sup>c</sup>NPV stands for negative predictive value. 
+</td>
 </tr>
 </table>
 
+**The top ten ranking genes based on feature importance for each cell type.**
+<table>
+   <tr>
+      <td><b>Cell Type</b></td>
+      <td><b>Top 1</b></td>
+      <td><b>Top 2</b></td>
+      <td><b>Top 3</b></td>
+      <td><b>Top 4</b></td>
+      <td><b>Top 5</b></td>
+      <td><b>Top 6</b></td>
+      <td><b>Top 7</b></td>
+      <td><b>Top 8</b></td>
+      <td><b>Top 9</b></td>
+      <td><b>Top 10</b></td>
+   </tr>
+   <tr>
+      <td><b>T cell</b></td>
+      <td>NEAT1</td>
+      <td>ADAMTS9</td>
+      <td>MBD5</td>
+      <td>HSPB1</td>
+      <td>UTY</td>
+      <td>RNF152</td>
+      <td>PCBP3</td>
+      <td>ELOVL7</td>
+      <td>SGIP1</td>
+      <td>REV3L</td>
+   </tr>
+   <tr>
+      <td><b>SMC</b></td>
+      <td>ADAMTS9</td>
+      <td>PCBP3</td>
+      <td>IGFBP4</td>
+      <td>DNAJB1</td>
+      <td>CEBPD</td>
+      <td>PTP4A3</td>
+      <td>OSMR</td>
+      <td>SERPINH1</td>
+      <td>CHORDC1</td>
+      <td>SLC12A2</td>
+   </tr>
+   <tr>
+      <td><b>Pericyte</b></td>
+      <td>XIST</td>
+      <td>SLC6A1-AS1</td>
+      <td>APBB2</td>
+      <td>SLC20A2</td>
+      <td>ATP1A2</td>
+      <td>GRID2</td>
+      <td>MIR99AHG</td>
+      <td>IMMP2L</td>
+      <td>PTPRG</td>
+      <td>CRIM1</td>
+   </tr>
+   <tr>
+      <td><b>Capillary</b></td>
+      <td>ADAMTS9</td>
+      <td>PDE10A</td>
+      <td>BACE2</td>
+      <td>AC092957.1</td>
+      <td>CP</td>
+      <td>GALNT18</td>
+      <td>MEF2A</td>
+      <td>HSPA1A</td>
+      <td>ADIPOR2</td>
+      <td>ELOVL7</td>
+   </tr>
+   <tr>
+      <td><b>Arterial</b></td>
+      <td>FLT1</td>
+      <td>AC092957.1</td>
+      <td>ADAMTS9</td>
+      <td>ABCD3</td>
+      <td>CP</td>
+      <td>RFTN1</td>
+      <td>ANO2</td>
+      <td>PLSCR4</td>
+      <td>BSG</td>
+      <td>CRIM1</td>
+   </tr>
+   <tr>
+      <td><b>Oligo</b></td>
+      <td>ADAMTS18</td>
+      <td>XIST</td>
+      <td>MAN2A1</td>
+      <td>CIRBP</td>
+      <td>LINC01505</td>
+      <td>SLC44A1</td>
+      <td>PI16</td>
+      <td>LPAR1</td>
+      <td>SGCD</td>
+      <td>IL1RAPL1</td>
+   </tr>
+   <tr>
+      <td><b>P. Fibro</b></td>
+      <td>XIST</td>
+      <td>CEMIP</td>
+      <td>ADAMTS12</td>
+      <td>AC093772.1</td>
+      <td>FLRT2</td>
+      <td>ATP1A2</td>
+      <td>ABCA1</td>
+      <td>IL1RAPL1</td>
+      <td>RNF220</td>
+      <td>DLG2</td>
+   </tr>
+   <tr>
+      <td><b>Ependymal</b></td>
+      <td>TTTY14</td>
+      <td>UTY</td>
+      <td>AC092957.1</td>
+      <td>AC019330.1</td>
+      <td>PDE4DIP</td>
+      <td>TMEM161B-AS1</td>
+      <td>BOC</td>
+      <td>CFAP46</td>
+      <td>MT-ATP6</td>
+      <td>ERBIN</td>
+   </tr>
+   <tr>
+      <td><b>Microglia</b></td>
+      <td>ACSL1</td>
+      <td>SLC11A1</td>
+      <td>XIST</td>
+      <td>PDE3B</td>
+      <td>HSPB1</td>
+      <td>RUNX1</td>
+      <td>TBC1D14</td>
+      <td>ELL2</td>
+      <td>TMEM163</td>
+      <td>SEC14L1</td>
+   </tr>
+   <tr>
+      <td><b>Astrocyte</b></td>
+      <td>LINC00278</td>
+      <td>DGKB</td>
+      <td>MT-ATP6</td>
+      <td>TMTC1</td>
+      <td>MT-ND2</td>
+      <td>OSMR-AS1</td>
+      <td>ADCY9</td>
+      <td>DDIT4</td>
+      <td>IRS2</td>
+      <td>ELOVL7</td>
+   </tr>
+   <tr>
+      <td><b>OPC</b></td>
+      <td>VEGFA</td>
+      <td>ADAMTS9-AS2</td>
+      <td>BNIP3L</td>
+      <td>RBFOX1</td>
+      <td>GALNT18</td>
+      <td>SCARB1</td>
+      <td>VWF</td>
+      <td>HSPA1B</td>
+      <td>ADAMTS9</td>
+      <td>OSMR</td>
+   </tr>
+   <tr>
+      <td><b>M. Fibro</b></td>
+      <td>PCDHA1</td>
+      <td>MAPK8IP1</td>
+      <td>PRR29-AS1</td>
+      <td>TRPC3</td>
+      <td>CNTN4-AS1</td>
+      <td>FZD7</td>
+      <td>P3H2-AS1</td>
+      <td>FCAR</td>
+      <td>GCK</td>
+      <td>ANKRD27</td>
+   </tr>
+   <tr>
+      <td><b>Neuron</b></td>
+      <td>MT-ATP6</td>
+      <td>XKR6</td>
+      <td>MT-ND4</td>
+      <td>NEAT1</td>
+      <td>TTTY14</td>
+      <td>PRKG1</td>
+      <td>FLT1</td>
+      <td>ZNF638</td>
+      <td>NALCN</td>
+      <td>TTC3</td>
+   </tr>
+   <tr>
+      <td><b>Veinous</b></td>
+      <td>XIST</td>
+      <td>SLC39A10</td>
+      <td>GPCPD1</td>
+      <td>APBB2</td>
+      <td>ABCG2</td>
+      <td>FGD6</td>
+      <td>NR3C1</td>
+      <td>PGM5</td>
+      <td>IL1RAPL1</td>
+      <td>TXNIP</td>
+   </tr>
+   <tr>
+      <td></td>
+   </tr>
+</table>
 
+#### Patient level results
 <div align=center><img width="1000" height="300" src="https://github.com/circustata/TransGene/blob/main/figure/patient_level_score.jpg"/></div>
 <p align="left"> 
-The framework of our method. (a) Calculate the Across Feature Map Attention. The inputs are the initial image and i-th layer feature maps of the encoder. (b) Output Modification. The generated AFMA in (a) is used to modify the output of the decoder’s predicted masks. (c) The process of generating gold AFMA.
-</p>
+The classification results at patient level. It shows the predicted results of each cell type. AD and Control denote AD patients and control individuals, respectively. The number on the right of the slash is the cell amount, and the number on the left indicates the proportion of cells belonging to AD patients predicted by our model. For example, the data 0.79/817 (the top-left data corresponding to AD1-Veinous) indicates that our model predicts that 79% (645 cells) of the 817 Veinous cells belong to AD patients. When more than 50% of cells are predicted to be AD cells, the data box is marked in red, indicating that the patient is predicted as AD patient. The box colored in blue is considered as the control group by our model. We defined the "Single Cell Type Score" metric to evaluate the importance of different cell types for diagnosing AD.
+</p> As can be seen from the figure: (1) Our method can accurately diagnose Alzheimer's disease by data from a single cell type. The Figure shows that all 53 groups of experiments were correctly predicted except for one group of data in each Ependymal, T cell, and Capillary cell type; (2) Our method is also applicable to diagnosing Alzheimer's disease using data from all cell types. The figure shows that our method correctly classifies Alzheimer's patients using all cell type data; (3) We defined the "single-cell type score" metric to evaluate the importance of different cell types for diagnosing Alzheimer's disease. The experimental results show that using **SMC, P. Fibro, or Arterial** alone can diagnose Alzheimer's disease more accurately than using all data.
 
 
